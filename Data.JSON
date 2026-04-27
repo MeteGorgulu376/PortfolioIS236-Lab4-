@@ -1,0 +1,34 @@
+{
+  "student": {
+    "name": "Mete Gorgulu",
+    "university": "University of Maryland, Baltimore County (UMBC)",
+    "major": "Information Systems",
+    "course": "IS436 – System Analysis",
+    "email": "meteg1@umbc.edu"
+  },
+  "skills": [
+    "System Analysis & UI Design",
+    "Data Science & Machine Learning",
+    "Agentic AI Architecture",
+    "SQL Database Management",
+    "Docker Virtualization"
+  ],
+  "projects": [
+    {
+      "name": "UMBC Asset Recovery Ticketing System",
+      "description": "Led a campus-wide project to design a digital lost and found ticketing system, developing the architecture, UI layout, and cloud infrastructure deployment."
+    },
+    {
+      "name": "Aquarishop Relational Database",
+      "description": "Developed a comprehensive SQL database framework to manage multi-entity dependencies like inventory and transactions for an exotic fish store."
+    },
+    {
+      "name": "Pathfinder AI Orchestrator",
+      "description": "Architected an autonomous AI agent orchestrator to define runtime behaviors for an OpenClaw environment."
+    }
+  ],
+  "achievements": [
+    "Designed a custom web scraper extension for real-time network optimization",
+    "Configured and deployed scalable monitoring systems using custom JSON configurations"
+  ]
+}

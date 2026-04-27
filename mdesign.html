@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio – Material Contact</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <script type="importmap">
+    {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+  </script>
+  <script type="module">
+    import '@material/web/all.js';
+    import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+  </script>
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f5f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 24px;
+    }
+    
+    .md-card {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 24px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      width: 100%;
+      max-width: 600px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .name-row {
+      display: flex;
+      gap: 16px;
+    }
+
+    /* Make text fields take up available space */
+    .name-row md-outlined-text-field {
+      flex: 1;
+    }
+    md-outlined-text-field {
+      width: 100%;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="md-card">
+    <h1 class="md-typescale-display-small" style="margin-top: 0;">Let's Connect</h1>
+    <p class="md-typescale-body-large" style="color: #444746;">
+      Reach out to discuss system analysis, AI architecture, or database projects.
+    </p>
+
+    <form id="materialContactForm">
+      
+      <div class="name-row">
+        <md-outlined-text-field label="First Name" required></md-outlined-text-field>
+        <md-outlined-text-field label="Last Name"></md-outlined-text-field>
+      </div>
+
+      <md-outlined-text-field label="Email Address" type="email" required></md-outlined-text-field>
+      
+      <md-outlined-text-field label="Message" type="textarea" rows="5" required></md-outlined-text-field>
+
+      <div class="button-group">
+        <md-outlined-button type="reset">Clear</md-outlined-button>
+        <md-filled-button type="submit" id="submitBtn">Send Message</md-filled-button>
+      </div>
+
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('materialContactForm');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Material Web Components automatically handle required field validation!
+      // Here we simulate the button lock from your notes.
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+
+      setTimeout(() => {
+        alert("Message successfully sent via Material Design form!");
+        form.reset();
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send Message";
+      }, 3000);
+    });
+  </script>
+
+</body>
+</html>
